@@ -1,5 +1,7 @@
 package happyFamily.happyFamily1;
 
+import java.util.Arrays;
+
 public class Human {
     String name;
     String surname;
@@ -9,7 +11,6 @@ public class Human {
     Pet pet;
     Human mother;
     Human father;
-
     String[][] schedule;
 
 
@@ -51,6 +52,22 @@ public class Human {
             System.out.printf("I have a %s, he is %s years old, he is almost not sly \n", pet.species, pet.age);
     }
 
+    public boolean feedPet(boolean isTime){
+        if (isTime){
+            System.out.printf("Hm... I will feed %s \n", pet.nickname);
+            return true;
+        }else {
+            int a = (int) (Math.random()*100);
+            if (pet.trickLevel > a) {
+                System.out.printf("Hm... I will feed %s \n", pet.nickname);
+                return true;
+            }else {
+                System.out.printf("I think %s is not hungry. \n", pet.nickname);
+                return false;
+            }
+
+        }
+    }
 
     @Override
     public String toString() {
@@ -59,9 +76,10 @@ public class Human {
                 ", surname='" + surname + '\'' +
                 ", year=" + year +
                 ", iq=" + iq +
-                ", mother=" + mother.name + " " +mother.surname +
-                ", father=" + father.name + " " +father.surname +
                 ", pet=" + pet +
+                ", mother=" + mother.name +
+                ", father=" + father.name +
+                ", schedule=" + Arrays.deepToString(schedule) +
                 '}';
     }
 }

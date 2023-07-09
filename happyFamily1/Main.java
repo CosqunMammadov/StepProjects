@@ -4,33 +4,37 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Pet dog= new Pet();
-        dog.nickname= "Rock";
-        dog.age= 5;
-        dog.trickLevel= 75;
-        dog.habits= new String[]{"eat", "drink", "sleep"};
-        dog.species="dog";
 
-        Human michael= new Human();
-        michael.name= "Michael";
-        michael.surname= "Karleone";
-        michael.year= 1977;
-        michael.iq= 90;
-        michael.pet= dog;
+        Pet dog = new Pet("dog", "Rock", 5, 75, "eat", "drink", "sleep");
 
-        Human father= new Human();
-        father.name= "Vito";
-        father.surname= "Karleone";
+        Human michaelFather = new Human("Vito", "Karleone", 1957);
 
-        Human mother= new Human();
-        mother.name= "Jane";
-        mother.surname= "Karleone";
+        Human michaelMother = new Human("Jane", "Karleone", 1959);
 
-        michael.father= father;
-        michael.mother= mother;
+        Human michael = new Human("Michael", "Karleone", 1977, 90, dog, michaelMother, michaelFather, new String[][] {{"day1","task1"},{"day2","task2"}});
 
 
-        System.out.println(dog.toString());
+
+        Pet cat = new Pet("cat", "Tom");
+
+        Human jakeFather = new Human("Jone", "Miller", 1973);
+
+        Human jakeMother = new Human("Sophia", "Miller", 1975);
+
+        Human jake = new Human("Jake", "Miller", 1994, jakeMother, jakeFather);
+
+
+
+        Pet fish = new Pet();
+
+        Human emmaFather = new Human();
+
+        Human emmaMother = new Human();
+
+        Human emma= new Human();
+
+
         System.out.println(michael.toString());
+        System.out.println(dog.toString());
     }
 }
