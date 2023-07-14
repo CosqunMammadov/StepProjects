@@ -17,6 +17,7 @@ public class Main {
         michael.setFamily(family);
 
         System.out.println(michael.toString());
+        System.out.println(family.toString());
 
 
 
