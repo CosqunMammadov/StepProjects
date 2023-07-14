@@ -3,12 +3,12 @@ package happyFamily.happyFamily2;
 import java.util.Arrays;
 
 public class Human {
-    String name;
-    String surname;
-    int year;
-    int iq;
-    String[][] schedule;
-    Family family;
+    private String name;
+    private String surname;
+    private int year;
+    private int iq;
+    private String[][] schedule;
+    private Family family;
 
 
     public Human(String name, String surname, int year, int iq) {
@@ -18,7 +18,7 @@ public class Human {
         this.iq = iq;
     }
 
-    public Human(String name, String surname, int year, int iq, String[][] schedule) {
+    public Human(String name, String surname, int year, int iq,  String[][] schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -30,10 +30,86 @@ public class Human {
     public Human() {
     }
 
+    static {
+        System.out.println("Human class is being loaded");
+    }
+
+    {
+        System.out.println("Object of Human is created");
+    }
+
+
+    public boolean feedPet(boolean isTime) {
+        Pet pet = family.getPet();
+        if (isTime) {
+            System.out.printf("Hm... I will feed %s \n", pet.getNickname());
+            return true;
+        } else {
+            int a = (int) (Math.random() * 100);
+            if (pet.getTrickLevel() > a) {
+                System.out.printf("Hm... I will feed %s \n", pet.getNickname());
+                return true;
+            } else {
+                System.out.printf("I think %s is not hungry. \n", pet.getNickname());
+                return false;
+            }
+
+        }
+    }
 
 
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getIq() {
+        return iq;
+    }
+
+    public void setIq(int iq) {
+        this.iq = iq;
+    }
+
+    public String[][] getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(String[][] schedule) {
+        this.schedule = schedule;
+    }
+
+    public Family getFamily() {
+        return family;
+    }
+
+    public void setFamily(Family family) {
+        this.family = family;
+    }
+
+    public boolean equals( Human child){
+        return this.hashCode() == child.hashCode();
+    }
 
     @Override
     public String toString() {
@@ -42,7 +118,7 @@ public class Human {
                 ", surname='" + surname + '\'' +
                 ", year=" + year +
                 ", iq=" + iq +
-                ", schedule=" + Arrays.toString(schedule) +
+                ", schedule=" + Arrays.deepToString(schedule) +
                 ", family=" + family +
                 '}';
     }

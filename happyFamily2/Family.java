@@ -9,10 +9,18 @@ public class Family {
     private Human[] children;
     private Pet pet;
 
-public Family(Human mother, Human father){
-    this.mother=mother;
-    this.father=father;
-}
+    static {
+        System.out.println("Family class is being loaded");
+    }
+
+    {
+        System.out.println("Object of Family is created");
+    }
+
+    public Family(Human mother, Human father) {
+        this.mother = mother;
+        this.father = father;
+    }
 
     public Family(Human mother, Human father, Human[] children, Pet pet) {
         this.mother = mother;
@@ -21,23 +29,28 @@ public Family(Human mother, Human father){
         this.pet = pet;
     }
 
-    public Family() {
+
+    public void addChild(Human child) {
+        Human[] newChildren = new Human[children.length + 1];
+        System.arraycopy(children, 0, newChildren, 0, children.length);
+        newChildren[children.length] = child;
+        children = newChildren;
     }
 
-    public void addChild(Human child){
-        ArrayList<Human> arrayList= new ArrayList<>(Arrays.asList(children));
-        arrayList.add(child);
-        children= arrayList.toArray(children);
+    public void deleteChild(Human child) {
+        Human[] newChildren = new Human[children.length - 1];
+        int k = 0;
+        for (int i = 0; i < children.length; i++) {
+            if (child.equals(children[i]))
+                k++;
+            else
+                newChildren[i - k] = children[i];
+        }
+        children = newChildren;
     }
 
-    public void deleteChild(Human child){
-    ArrayList<Human> arrayList= new ArrayList<>(Arrays.asList(children));
-    arrayList.remove(child);
-    children= arrayList.toArray(children);
-    }
-
-    public int countFamily(){
-    return 2+children.length;
+    public int countFamily() {
+        return 2 + children.length;
     }
 
     public Human getMother() {
@@ -60,7 +73,7 @@ public Family(Human mother, Human father){
         return children;
     }
 
-    public void setChildren(Human[] children) {
+    public void setChildren(Human... children) {
         this.children = children;
     }
 
@@ -71,6 +84,13 @@ public Family(Human mother, Human father){
     public void setPet(Pet pet) {
         this.pet = pet;
     }
+
+    public boolean equals( Family family){
+        return
+                this.father.hashCode() == family.hashCode() &&
+                        this.mother.hashCode() == family.mother.hashCode();
+    }
+
 
     @Override
     public String toString() {
