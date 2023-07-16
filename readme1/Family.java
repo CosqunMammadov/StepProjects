@@ -1,6 +1,5 @@
-package happyFamily.happyFamily2;
+package happyFamily.readme1;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Family {
@@ -29,25 +28,6 @@ public class Family {
         this.pet = pet;
     }
 
-
-    public void addChild(Human child) {
-        Human[] newChildren = new Human[children.length + 1];
-        System.arraycopy(children, 0, newChildren, 0, children.length);
-        newChildren[children.length] = child;
-        children = newChildren;
-    }
-
-    public void deleteChild(Human child) {
-        Human[] newChildren = new Human[children.length - 1];
-        int k = 0;
-        for (int i = 0; i < children.length; i++) {
-            if (child.equals(children[i]))
-                k++;
-            else
-                newChildren[i - k] = children[i];
-        }
-        children = newChildren;
-    }
 
     public int countFamily() {
         return 2 + children.length;
@@ -85,7 +65,27 @@ public class Family {
         this.pet = pet;
     }
 
-    public boolean equals( Family family){
+    public void addChild(Human child) {
+        Human[] newChildren = new Human[children.length + 1];
+        System.arraycopy(children, 0, newChildren, 0, children.length);
+        newChildren[children.length] = child;
+        children = newChildren;
+    }
+
+    public void deleteChild(Human child) {
+        Human[] newChildren = new Human[children.length - 1];
+        int k = 0;
+        for (int i = 0; i < children.length; i++) {
+            if (child.equals(children[i]))
+                k++;
+            else
+                newChildren[i - k] = children[i];
+        }
+        children = newChildren;
+    }
+
+
+    public boolean equals(Family family) {
         return
                 this.father.hashCode() == family.hashCode() &&
                         this.mother.hashCode() == family.mother.hashCode();

@@ -1,6 +1,7 @@
-package happyFamily.happyFamily2;
+package happyFamily.readme1;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Human {
     private String name;
@@ -18,7 +19,7 @@ public class Human {
         this.iq = iq;
     }
 
-    public Human(String name, String surname, int year, int iq,  String[][] schedule) {
+    public Human(String name, String surname, int year, int iq, String[][] schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -37,26 +38,6 @@ public class Human {
     {
         System.out.println("Object of Human is created");
     }
-
-
-    public boolean feedPet(boolean isTime) {
-        Pet pet = family.getPet();
-        if (isTime) {
-            System.out.printf("Hm... I will feed %s \n", pet.getNickname());
-            return true;
-        } else {
-            int a = (int) (Math.random() * 100);
-            if (pet.getTrickLevel() > a) {
-                System.out.printf("Hm... I will feed %s \n", pet.getNickname());
-                return true;
-            } else {
-                System.out.printf("I think %s is not hungry. \n", pet.getNickname());
-                return false;
-            }
-
-        }
-    }
-
 
 
     public String getName() {
@@ -107,8 +88,35 @@ public class Human {
         this.family = family;
     }
 
-    public boolean equals( Human child){
-        return this.hashCode() == child.hashCode();
+
+    public boolean feedPet(boolean isTime) {
+        Pet pet = family.getPet();
+        if (isTime) {
+            System.out.printf("Hm... I will feed %s \n", pet.getNickname());
+            return true;
+        } else {
+            int a = (int) (Math.random() * 100);
+            if (pet.getTrickLevel() > a) {
+                System.out.printf("Hm... I will feed %s \n", pet.getNickname());
+                return true;
+            } else {
+                System.out.printf("I think %s is not hungry. \n", pet.getNickname());
+                return false;
+            }
+
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(name, surname, year, iq, family);
+        result = 31 * result + Arrays.deepHashCode(schedule);
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return this.hashCode() == obj.hashCode();
     }
 
     @Override

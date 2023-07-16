@@ -1,6 +1,7 @@
-package happyFamily.happyFamily2;
+package happyFamily.readme1;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Pet {
 
@@ -89,9 +90,18 @@ public class Pet {
     }
 
 
-    public boolean equals(Pet pet){
-        return this.hashCode() == pet.hashCode();
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(species, nickname, age, trickLevel);
+        result = 31 * result + Arrays.hashCode(habits);
+        return result;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return this.hashCode() == obj.hashCode();
+    }
+
     @Override
     public String toString() {
         return "Pet{" +
