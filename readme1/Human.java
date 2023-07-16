@@ -127,7 +127,6 @@ public class Human {
                 ", year=" + year +
                 ", iq=" + iq +
                 ", schedule=" + Arrays.deepToString(schedule) +
-                ", family=" + family +
                 '}';
     }
 }
