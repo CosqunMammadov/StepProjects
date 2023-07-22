@@ -115,9 +115,9 @@ public class Pet {
                 ", age=" + age +
                 ", trickLevel=" + trickLevel +
                 ", habits=" + Arrays.toString(habits) +
-                ", numberOfLegs=" + species.numberOfLegs +
-                ", Does the animal have fur?: " + species.hasFur +
-                ", Can the animal fly?: " + species.canFly +
+                ", numberOfLegs=" + species.getNumberOfLegs() +
+                ", Does the animal have fur?: " + species.isHasFur() +
+                ", Can the animal fly?: " + species.isCanFly() +
                 '}';
     }
 }
