@@ -1,8 +1,6 @@
 package happyFamily.readme2;
 
 enum Species {
-
-
         CAT(false, true, 4),
         DOG(false, true, 4),
         FISH(false, false, 0),
