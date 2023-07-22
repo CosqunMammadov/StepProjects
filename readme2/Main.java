@@ -4,9 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
         Species dog = Species.DOG;
-        dog.numberOfLegs = 4;
-        dog.canFly = false;
-        dog.hasFur = true;
 
         Pet rock = new Pet(dog, "Rock", 5, 75, "eat", "drink", "sleep");
 
