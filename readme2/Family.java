@@ -72,7 +72,6 @@ public class Family {
             return null;
     }
 
-
     public String deleteChild(Human child) {
         Human[] newChildren = new Human[children.length - 1];
         int k = 0;
@@ -89,7 +88,6 @@ public class Family {
             return null;
     }
 
-
     public int countFamily(){
         int amountOfMembers = children.length;
         if (father != null)
@@ -99,18 +97,15 @@ public class Family {
         return amountOfMembers;
     }
 
-
     protected void finalize() {
         System.out.println("Object of Family is deleted");
     }
-
 
     public boolean equals(Family family) {
         return
                 this.father.hashCode() == family.hashCode() &&
                         this.mother.hashCode() == family.mother.hashCode();
     }
-
 
     @Override
     public String toString() {

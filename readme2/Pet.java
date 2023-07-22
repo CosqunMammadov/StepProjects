@@ -36,7 +36,6 @@ public class Pet {
         System.out.println("Object of Pet is created");
     }
 
-
     void eat() {
         System.out.println("I am eating.");
     }
@@ -48,7 +47,6 @@ public class Pet {
     void foul() {
         System.out.println("I need to cover it up.");
     }
-
 
     public Species getSpecies() {
         return species;

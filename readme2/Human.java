@@ -27,7 +27,6 @@ public class Human {
         this.schedule = schedule;
     }
 
-
     public Human() {
     }
 
@@ -38,7 +37,6 @@ public class Human {
     {
         System.out.println("Object of Human is created");
     }
-
 
     public String getName() {
         return name;
@@ -87,7 +85,6 @@ public class Human {
     public void setFamily(Family family) {
         this.family = family;
     }
-
 
     public boolean feedPet(boolean isTime) {
         Pet pet = family.getPet();
