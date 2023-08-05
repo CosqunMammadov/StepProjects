@@ -1,4 +1,4 @@
-package happyFamily.readme3;
+package happyFamily.readme3.enums;
 public enum DayofWeek{
 
         MONDAY,

@@ -1,16 +1,19 @@
-package happyFamily.readme3;
+package happyFamily.readme3.animals;
+
+import happyFamily.readme3.enums.Species;
 
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Dog extends Pet{
+public class RoboCat extends Pet{
+
     private Species species;
     private String nickname;
     private int age;
     private int trickLevel;
     private String[] habits;
 
-    public Dog(Species species, String nickname, int age, int trickLevel, String... habits) {
+    public RoboCat(Species species, String nickname, int age, int trickLevel, String... habits) {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
@@ -18,12 +21,12 @@ public class Dog extends Pet{
         this.habits = habits;
     }
 
-    public Dog(Species species, String nickname) {
+    public RoboCat(Species species, String nickname) {
         this.species = species;
         this.nickname = nickname;
     }
 
-    public Dog() {
+    public RoboCat() {
     }
 
     public Species getSpecies() {
@@ -67,11 +70,11 @@ public class Dog extends Pet{
     }
 
     @Override
-    void respond() {
+    public void respond() {
         System.out.printf("Helllo owner. I am %s. I miss you.\n", nickname);
     }
 
-    void foul() {
+    public void foul() {
         System.out.println("I need to cover it up.");
     }
 

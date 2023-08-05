@@ -1,4 +1,6 @@
-package happyFamily.readme3;
+package happyFamily.readme3.animals;
+
+import happyFamily.readme3.enums.Species;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -68,7 +70,7 @@ public class Fish extends Pet{
     }
 
     @Override
-    void respond() {
+    public void respond() {
         System.out.printf("Helllo owner. I am %s. I miss you.\n", nickname);
     }
 

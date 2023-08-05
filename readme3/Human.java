@@ -1,5 +1,7 @@
 package happyFamily.readme3;
 
+import happyFamily.readme3.animals.Pet;
+
 import java.util.Arrays;
 import java.util.Objects;
 

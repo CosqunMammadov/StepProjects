@@ -1,4 +1,4 @@
-package happyFamily.readme3;
+package happyFamily.readme3.animals;
 
 import java.util.Arrays;
 import java.util.Objects;

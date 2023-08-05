@@ -1,5 +1,9 @@
 package happyFamily.readme3;
 
+import happyFamily.readme3.animals.Fish;
+import happyFamily.readme3.enums.DayofWeek;
+import happyFamily.readme3.enums.Species;
+
 public class Main {
 
     public static void main(String[] args) {
