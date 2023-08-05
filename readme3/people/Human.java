@@ -1,4 +1,4 @@
-package happyFamily.readme3;
+package happyFamily.readme3.people;
 
 import happyFamily.readme3.animals.Pet;
 
@@ -6,12 +6,12 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Human {
-    private String name;
-    private String surname;
-    private int year;
-    private int iq;
-    private String[][] schedule;
-    private Family family;
+    protected String name;
+    protected String surname;
+    protected int year;
+    protected int iq;
+    protected String[][] schedule;
+    protected Family family;
 
 
     public Human(String name, String surname, int year, int iq) {

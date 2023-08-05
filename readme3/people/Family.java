@@ -1,13 +1,14 @@
-package happyFamily.readme3;
+package happyFamily.readme3.people;
 
 import happyFamily.readme3.animals.Pet;
 
 import java.util.Arrays;
 
-public class Family {
+public class Family implements HumanCreator {
+
     private Human mother;
     private Human father;
-    private Human[] children;
+    private Human[] children = new Human[0];
     private Pet pet;
 
     static {
@@ -62,34 +63,31 @@ public class Family {
         this.pet = pet;
     }
 
-    public Human bornChild(){
+    public Human bornChild() {
         int gender = (int) (Math.random() * 2);
         String[] boyNames = {"Henry", "Lucas", "Benjamin"};
         String[] girlNames = {"Emma", "Sophia", "Evelyn"};
-        int name = (int) (Math.random() * 3);
-        if(gender == 0){
+        int nameIndex = (int) (Math.random() * 3);
+        int averageIq = (father.getIq() + mother.getIq()) / 2;
+        if (gender == 0) {
             Man child = new Man();
-            child.setName(boyNames[name]);
-            child.setIq((father.getIq() + mother.getIq()) / 2);
+            child.setName(boyNames[nameIndex]);
+            child.setIq(averageIq);
             return child;
         } else if (gender == 1) {
             Woman child = new Woman();
-            child.setName(girlNames[name]);
-            child.setIq((father.getIq() + mother.getIq()) / 2);
+            child.setName(girlNames[nameIndex]);
+            child.setIq(averageIq);
             return child;
         }
         return null;
     }
 
-    public String addChild(Human child) {
+    public void addChild(Human child) {
         Human[] newChildren = new Human[children.length + 1];
         System.arraycopy(children, 0, newChildren, 0, children.length);
         newChildren[children.length] = child;
         children = newChildren;
-        if (child.equals(children[children.length - 1])) {
-            return "Child is added";
-        } else
-            return null;
     }
 
     public String deleteChild(Human child) {
@@ -108,7 +106,7 @@ public class Family {
             return null;
     }
 
-    public int countFamily(){
+    public int countFamily() {
         int amountOfMembers = children.length;
         if (father != null)
             amountOfMembers++;
