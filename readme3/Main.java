@@ -21,6 +21,5 @@ public class Main {
         System.out.println(michael.toString());
         System.out.println(family.toString());
         System.out.println(rock.toString());
-        rock.respond();
     }
 }
